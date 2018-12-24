@@ -1,7 +1,7 @@
 // $('.popupMenu .popupContent').css('height',window.innerHeight*0.7);
 
 $(document).ready(function () {
-    createContent();
+    // createContent();
 
     let loginPassword = location.href.split("?")[1];
     let username = document.getElementById("username");
