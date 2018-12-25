@@ -20,6 +20,13 @@ import java.util.List;
 @WebServlet("/shop")
 public class MainServlet extends HttpServlet {
     public static final Logger logger = LoggerFactory.getLogger(MainServlet.class);
+    private List<Category> categories;
+
+    @Override
+    public void init() throws ServletException {
+        super.init();
+        categories = new Dao().getAllCategories();
+    }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -29,11 +36,12 @@ public class MainServlet extends HttpServlet {
         String login = (String) session.getAttribute("login");
         String password = (String) session.getAttribute("password");
         if (login == null || password == null) {
+            logger.info("redirect /login login: {}, password: {}",login,password);
             response.sendRedirect("login");
             return;
         }
+        logger.info("successfully login: {}, password: {}",login,password);
 
-        List<Category> categories = new Dao().getAllCategories();
         request.setAttribute("categories", categories);
         request.setAttribute("login", login);
 

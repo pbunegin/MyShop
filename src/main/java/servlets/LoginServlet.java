@@ -13,7 +13,9 @@ import java.io.IOException;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
-    public static final Logger logger = LoggerFactory.getLogger(LoginServlet.class);
+    private static final Logger logger = LoggerFactory.getLogger(LoginServlet.class);
+    private final String LOGIN = "bunegin_p";
+    private final String PASSWORD = "123";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -23,11 +25,16 @@ public class LoginServlet extends HttpServlet {
         String login = request.getParameter("login");
         String password = request.getParameter("password");
         if (login == null) {
+            logger.info("open login.jsp login: {}, password: {}",login,password);
             request.getRequestDispatcher("login.jsp").forward(request, response);
-        } else if (!(login.equals("bunegin_p") && password.equals("123"))) {
+
+        } else if (!(login.equals(LOGIN) && password.equals(PASSWORD))) {
+            logger.info("wrong login/password login: {}, password: {}",login,password);
             request.setAttribute("errorLoginPass", true);
             request.getRequestDispatcher("login.jsp").forward(request, response);
+
         } else {
+            logger.info("successfully login, redirect /shop login: {}, password: {}",login,password);
             session.setAttribute("login", login);
             session.setAttribute("password", password);
             response.sendRedirect("shop");

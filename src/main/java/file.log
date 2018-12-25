@@ -1,0 +1,13 @@
+25 дек 2018 19:57:50.190 INFO  [http-bio-8080-exec-1] - [servlets.MainServlet] - redirect /login login: null, password: null
+25 дек 2018 19:57:50.227 INFO  [http-bio-8080-exec-3] - [servlets.LoginServlet] - open login.jsp login: null, password: null
+25 дек 2018 19:58:00.948 INFO  [http-bio-8080-exec-1] - [servlets.LoginServlet] - wrong login/password login: xcgb, password: fgh
+25 дек 2018 19:58:11.287 INFO  [http-bio-8080-exec-6] - [servlets.LoginServlet] - wrong login/password login: bunegin_p@mail.ru, password: dzfhgf
+25 дек 2018 19:58:24.806 INFO  [http-bio-8080-exec-9] - [servlets.LoginServlet] - successfully login, redirect /shop login: bunegin_p, password: 123
+25 дек 2018 19:58:24.809 INFO  [http-bio-8080-exec-9] - [servlets.MainServlet] - successfully login: bunegin_p, password: 123
+25 дек 2018 19:59:22.420 INFO  [http-bio-8080-exec-5] - [servlets.MainServlet] - successfully login: bunegin_p, password: 123
+25 дек 2018 19:59:56.528 INFO  [http-bio-8080-exec-1] - [servlets.MainServlet] - successfully login: bunegin_p, password: 123
+25 дек 2018 20:56:13.311 INFO  [http-bio-8080-exec-3] - [servlets.MainServlet] - redirect /login login: null, password: null
+25 дек 2018 20:56:13.706 INFO  [http-bio-8080-exec-3] - [servlets.LoginServlet] - open login.jsp login: null, password: null
+25 дек 2018 20:56:24.554 INFO  [http-bio-8080-exec-4] - [servlets.LoginServlet] - wrong login/password login: ÐÑÐ½ÐµÐ³Ð¸Ð½ ÐÐµÑÑ ÐÐ»ÐµÐºÑÐµÐµÐ²Ð¸Ñ, password: dgzh
+25 дек 2018 20:56:32.158 INFO  [http-bio-8080-exec-4] - [servlets.LoginServlet] - successfully login, redirect /shop login: bunegin_p, password: 123
+25 дек 2018 20:56:32.162 INFO  [http-bio-8080-exec-4] - [servlets.MainServlet] - successfully login: bunegin_p, password: 123
