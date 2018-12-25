@@ -3,21 +3,21 @@
 $(document).ready(function () {
     // createContent();
 
-    let loginPassword = location.href.split("?")[1];
-    let username = document.getElementById("username");
-
-    if (location.href.split("?")[0].endsWith('index.html')) {
-        if (!loginPassword) {
-            logout();
-        }
-        let login;
-        loginPassword.split("&").forEach(pair => {
-            if (pair.split("=")[0] == 'login') {
-                login = pair.split("=")[1];
-            }
-        });
-        username.innerText = login;
-    }
+//    let loginPassword = location.href.split("?")[1];
+//    let username = document.getElementById("username");
+//
+//    if (location.href.split("?")[0].endsWith('index.html')) {
+//        if (!loginPassword) {
+//            logout();
+//        }
+//        let login;
+//        loginPassword.split("&").forEach(pair => {
+//            if (pair.split("=")[0] == 'login') {
+//                login = pair.split("=")[1];
+//            }
+//        });
+//        username.innerText = login;
+//    }
 
     $('.addToBasket').on('click', addToBasket);
     $('.content .product').children().not('.addToBasket').on('click', productShow);

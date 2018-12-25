@@ -10,19 +10,10 @@
     <meta charset="utf-8">
     <title>Список товаров</title>
 
-    <style>
-        <%@include file="/style.css"%>
-    </style>
-    <%--<jsp:include style.css/>--%>
-    <%--<script src="../java/db/listProd.json" asyns></script>--%>
-    <script type="text/javascript">
-        <%@include file="/jquery-3.3.1.min.js"%>
-    </script>
-    <script type="text/javascript">
-        <%@include file="/script.js"%>
-    </script>
-    <%--<script src="../jquery-3.3.1.min.js" asyns></script>--%>
-    <%--<script src="./script.js" asyns></script>--%>
+    <link rel="stylesheet" href="style.css">
+    <script src="listProd.js" asyns></script>
+    <script src="jquery-3.3.1.min.js" asyns></script>
+    <script src="script.js" asyns></script>
 </head>
 
 <body>
@@ -78,19 +69,19 @@
 
     <div class="menu">
         <div class="cabinet">
-            <a href="login.html">
-                <img class="imgLogout" value="Поиск" src="img/logout.png">
+            <a href="login">
+                <img class="imgLogout" value="Поиск" src="/img/logout.png">
             </a>
-            <div class="username" id="username"></div>
+            <div class="username" id="username"><%out.println((String)request.getAttribute("login")); %></div>
         </div>
         <div class="search">
             <a href="javascript:searchShow()">
-                <img class="imgSearch" value="Поиск" src="img/search.png">
+                <img class="imgSearch" value="Поиск" src="/img/search.png">
             </a>
         </div>
         <div class="basket">
             <a href="javascript:basketShow()">
-                <img class="imgBasket" value="Корзина" src="img/basket.png">
+                <img class="imgBasket" value="Корзина" src="/img/basket.png">
             </a>
             <div class="countProducts" id="countProducts"></div>
         </div>
@@ -118,7 +109,7 @@
                                     out.println("<div class=\"products\">");
 
                                     for (Product product: category.getProducts()){
-                                        out.println("<div class=\"product\">");
+                                        out.println("<div class=\"product\" id=\"" + product.getId() + "\">");
                                         out.println("<div class=\"logo\"><img src=" + product.getImgUrl() +
                                                 " value=\"logoButton\" width=\"150px\"><div class=\"productName\">" +
                                                 product.getProductName() + "</div></div><div class=\"infoProduct\">" +
@@ -127,9 +118,8 @@
                                             out.println("<li>" + charact.getKey() + ": " + charact.getValue() + "</li>");
                                         }
                                         out.println("</ul></div><div class=\"price\">" + product.getPrice() + "</div></div>" +
-                                                "<img class=\"addToBasket\" value=\"В корзину\" src=\"../img/addToBasket.png\">" +
-                                                "<img class=\"removeFromBasket\" value=\"В корзину\" src=\"img/removeFromBasket.png\"></div>");
-                                        out.println("</div>");
+                                                "<img class=\"addToBasket\" value=\"В корзину\" src=\"/img/addToBasket.png\">" +
+                                                "<img class=\"removeFromBasket\" value=\"В корзину\" src=\"/img/removeFromBasket.png\"></div>");
                                     }
                                     out.println("</div>");
                                 }

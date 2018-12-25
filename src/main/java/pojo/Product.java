@@ -55,6 +55,6 @@ public class Product {
     }
 
     public void setImgUrl() {
-        this.imgUrl = "/src/main/webapp/prodImg/" + id + ".jpg";
+        this.imgUrl = "/prodImg/" + id + ".jpg";
     }
 }
